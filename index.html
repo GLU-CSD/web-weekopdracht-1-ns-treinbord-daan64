@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -9,14 +10,63 @@
 <body>
     <div id="container">
         <div id="left">
+            <div class="klok">
+                <img src="./assets/img/klok (1).png">
+            </div>
             <!-- hier komt de klok -->
         </div>
+ 
         <div id="middle">
-            <!-- Hier komt de reizigers info -->
+            <div id="box">
+
+                <div id="tijd">
+                    1 minuut
+                </div>
+                <div id="heerlen">Heerlen</div>
+                <div id="info">
+                    via 's-Hertogenbosch, Eindhoven,
+                </div>
+                <div id="inforegel2">Weert, Roermond en Sittard</div>
+                
+                <div id="intercity">Intercity</div>
+
+                <img src="./assets/img/ns_logo.png">
+
+                <div class="bordje"><img src="./assets/img/trein.png"></div>
+                
+                <div id="onderkantbordje">
+                    Hierna/next: 08:54 IC Venlo
+                </div>
+            </div>
+
+             <!-- Hier komt de reizigers info -->
         </div>
         <div id="right">
+            <div id="achtergrondvierkant">
+                <div id="blauwvierkantje">
+
+                </div>
+                <div id="spoor">spoor</div>
+                <div id="spoornummer">18</div>
+                <div id="b">b</div>
+            </div>
             <!-- hier komt het spoor nummer -->
         </div>
     </div>
+    <script>
+        const interval = setInterval(function() {
+            if( document.getElementById("tijd").innerHTML == "1 minuut"){
+                const now = new Date();
+                const hours = String(now.getHours()).padStart(2,"0");
+                const minutes = String(now.getMinutes()).padStart(2,"0")
+
+                document.getElementById("tijd").innerHTML = hours + ":" + minutes;
+
+            } else {
+                 document.getElementById("tijd").innerHTML = "1 minuut"
+            }
+        }, 5000);
+        
+    </script>
 </body>
 </html>
